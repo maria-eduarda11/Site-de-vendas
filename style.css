@@ -1,0 +1,217 @@
+/* Configurações Gerais e Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-secundaria: #f8f9fa; /* Cinza claro para fundo */
+    --cor-texto: #343a40; /* Preto quase escuro */
+    --cor-destaque: #28a745; /* Verde para botão de compra */
+}
+
+body {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* --- Cabeçalho (Header) --- */
+.cabecalho {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5em;
+    color: var(--cor-primaria);
+}
+
+.menu-navegacao a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.menu-navegacao a:hover {
+    color: var(--cor-primaria);
+}
+
+.carrinho {
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--cor-primaria);
+    position: relative;
+}
+
+.contador-carrinho {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7em;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+}
+
+/* --- Corpo Principal (Main) e Produtos --- */
+.conteudo-principal {
+    padding: 40px 5%;
+}
+
+.secao-produtos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--cor-primaria);
+    font-size: 2em;
+}
+
+.lista-produtos {
+    display: grid;
+    /* Define 3 colunas de tamanho igual no desktop */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+}
+
+.card-produto {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.card-produto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.imagem-produto img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.card-produto h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: var(--cor-texto);
+}
+
+.categoria {
+    color: #6c757d;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.preco {
+    font-size: 1.4em;
+    color: var(--cor-primaria);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-comprar {
+    background-color: var(--cor-destaque);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #1e7e34;
+}
+
+/* --- Rodapé (Footer) --- */
+.rodape {
+    background-color: var(--cor-texto);
+    color: #fff;
+    padding: 30px 5% 10px;
+}
+
+.container-rodape {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #495057;
+    margin-bottom: 10px;
+}
+
+.container-rodape h4 {
+    margin-bottom: 10px;
+    color: var(--cor-primaria);
+}
+
+.links-uteis a {
+    display: block;
+    color: #adb5bd;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.links-uteis a:hover {
+    color: #fff;
+}
+
+.redes-sociais p {
+    font-size: 1.2em;
+}
+
+.direitos-autorais {
+    text-align: center;
+    font-size: 0.8em;
+    color: #adb5bd;
+}
+
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .lista-produtos {
+        /* Muda para 2 colunas em tablets */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+    }
+    
+    .menu-navegacao {
+        margin: 10px 0;
+    }
+
+    .menu-navegacao a {
+        margin: 0 8px;
+    }
+
+    .container-rodape {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .lista-produtos {
+        /* Muda para 1 coluna em celulares */
+        grid-template-columns: 1fr; 
+    }
+}
